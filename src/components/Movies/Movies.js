@@ -9,7 +9,7 @@ class Movies extends Component {
       <ul className="movies">
         {this.props.movies.map((movie) => (
           <li className="movies__item" key={movie.imdbID}>
-            <MovieItem {...movie} />
+            <MovieItem {...movie} disabled={this.props.listMovies.find(el => el.imdbID === movie.imdbID)}/>
           </li>
         ))}
       </ul>
@@ -20,6 +20,7 @@ class Movies extends Component {
 const mapStateToProps = (state) => {
   return {
     movies: state.movies,
+    listMovies: state.listMovies,
   };
 };
 

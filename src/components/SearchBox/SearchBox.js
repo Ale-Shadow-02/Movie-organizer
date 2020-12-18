@@ -28,7 +28,6 @@ class SearchBox extends Component {
 
   render() {
     const { searchLine } = this.state;
-    console.log("INPUT", this.state);
     return (
       <div className="search-box">
         <form
