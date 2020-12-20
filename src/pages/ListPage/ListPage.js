@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from '../../components/Header/Header'
 import './ListPage.css';
 
 class ListPage extends Component {
@@ -14,6 +15,7 @@ class ListPage extends Component {
       fetch(`https://acb-api.algoritmika.org/api/movies/list/${id}`)
         .then(res => res.json())
         .then(data => {
+          console.log(data);
           this.setState({title: data.title})
           data.movies.forEach(elem => {
             fetch(`http://www.omdbapi.com/?i=${elem}&apikey=${apiKey}`)
@@ -27,18 +29,21 @@ class ListPage extends Component {
     }
     render() { 
         return (
+          <div>
+          <Header />
             <div className="list-page">
                 <h1 className="list-page__title">{this.state.title}</h1>
                 <ul>
                     {this.state.movies.map((item) => {
                         return (
                             <li key={item.imdbID}>
-                                <a href={"https://www.imdb.com/title/" + item.imdbID} target="_blank">{item.Title} ({item.Year})</a>
+                                <a href={"https://www.imdb.com/title/" + item.imdbID} className="link__block" target="_blank">{item.Title} ({item.Year})</a>
                             </li>
                         );
                     })}
                 </ul>
             </div>
+          </div>
         );
     }
 }

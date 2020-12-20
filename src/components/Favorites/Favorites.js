@@ -40,7 +40,6 @@ class Favorites extends Component {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data.id)
         this.setState({textLink: data.id})
       })
   };
@@ -56,9 +55,9 @@ class Favorites extends Component {
         <ul className="favorites__list">
           {this.props.listMovies.map((item) => {
             return (
-              <li key={item.imdbID}>
-                {item.Title} {item.Year}
-                <button onClick={() => this.props.removeMovie(item.imdbID)}>Удалить</button>
+              <li className="favorites__list--item" key={item.imdbID}>
+                <p className="favorites__list--title">{item.Title} {item.Year}</p>
+                <button className="favorites__list--delete" onClick={() => this.props.removeMovie(item.imdbID)}>X</button>
               </li>
             );
           })}
@@ -69,7 +68,7 @@ class Favorites extends Component {
         </button>
         <a href={`http://localhost:3000/list/${this.state.textLink}`}
            className={`link__none ${this.state.linkActive ? "link__block" : null}`}
-           target="_blank" >Share => ))</a>
+           target="_blank" >Поделиться с друзьями</a>
       </div>
     );
   }

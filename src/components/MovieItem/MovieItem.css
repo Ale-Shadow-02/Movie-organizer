@@ -1,14 +1,21 @@
 .movie-item {
     padding: 20px;
     display: flex;
+    flex-direction: column;
+}
+
+.movie-item__info {
+    display: flex;
+    flex-direction: column;
 }
 
 .movie-item__poster {
-    height: 230px;
-    margin-right: 21px;
+    height: 300px;
+    margin: 0 20px 20px 0;
 }
 
 .movie-item__title {
+  flex: 1 1 auto;
     font-weight: 500;
     font-size: 21px;
     margin-bottom: 40px;
