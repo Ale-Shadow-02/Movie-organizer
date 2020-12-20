@@ -5,7 +5,7 @@
 }
 
 .main-page__main-section {
-    padding-left: 40px;
+    padding-left: 20px;
     box-sizing: border-box;
     width: 60%;
 }
@@ -15,5 +15,6 @@
 }
 
 .main-page__favorites {
-    width: 35%;   
+    width: 35%;
+  margin-right: 20px;
 }
