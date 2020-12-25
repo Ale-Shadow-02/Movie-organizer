@@ -2,6 +2,8 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
 }
 
 .movie-item__info {
@@ -28,6 +30,8 @@
     color: #FFEEDB;
     font-size: 14px;
     transition: all 0.2s linear;
+    width: 220px;
+    border-radius: 3px;
 }
 
 .movie-item__add-button:hover {
